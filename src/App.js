@@ -1,12 +1,27 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class App extends Component {
   render() {
+    const text='Are you awesome?';
+    const condition = true;
+    const style = {
+      backgroundColor: 'gray',
+      border: '1px solid black',
+      height: Math.round(Math.random() * 300) + 50,
+      width: Math.round(Math.random() * 300) + 50,
+      WebkitTransition: 'all',
+      MozTransition: 'all',
+      msTransition: 'all'
+    }
     return (
-      <Fragment>
+      <div>
         <h1>Hello React!</h1>
-        <h2>Are you awesome?</h2>
-      </Fragment>
+        <h2>{text}</h2>
+        {
+          condition && 'show me'
+        }
+        <div style={style}></div>
+      </div>
     );
   }
 }
